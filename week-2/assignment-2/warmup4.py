@@ -1,7 +1,7 @@
 name = input("what is your name?: ")
 
 print(f"Hi {name}, time flies by fast.")
-age = int(input("How old are you?: "))
+age = input("How old are you?: ")
 
 add_tenyears = age + 10
 print(f"In 10 years you will be {add_tenyears}.")
