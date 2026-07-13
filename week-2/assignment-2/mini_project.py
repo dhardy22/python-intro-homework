@@ -1,4 +1,4 @@
-fahrenheit = int(input("Enter a temperature in Fahrenheit: "))
+fahrenheit = float(input("Enter a temperature in Fahrenheit: "))
 
 celsius = (fahrenheit - 32) * 5/9
 
