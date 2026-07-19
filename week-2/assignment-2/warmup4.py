@@ -20,7 +20,7 @@ print(f"In 10 years you will be {add_tenyears}.")
 # age = input("How old are you?: ")
 # add_tenyears = age + 10
 # print(f"In 10 years you will be {add_tenyears}.")
-# since inputs are strings by default, age, a string, could not be added to 10, an integer 
+# since inputs are strings by default, age, a string, could not be added to 10, an integer for the add_tenyears variable.
 
 #3. How you fixed it: 
 # to fix it, I will typecast age to an integer.
