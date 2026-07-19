@@ -23,6 +23,6 @@
 # 8b36eac Update README.md
 # 2eaa21f Initial commit
 
-print("This week I learned how to configure Homebrew, git, and GitHub. As well as how to make and clone repositories to my local machine. I have used the command line to make and open .py files and have practiced the core workflow of pull requests, creating branches off main, and making commits")
+print("This week I configured Homebrew, Git, and GitHub, learned to clone and manage repositories locally, and practiced the core git workflow.")
 
 

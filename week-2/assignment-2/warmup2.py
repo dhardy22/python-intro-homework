@@ -1,6 +1,8 @@
 # Navigation commands I used:
 # pwd
-# cd week-2/assignment-2/
+# cd python-intro-homework
+# cd week-2
+# cd assignment-2
 
 
 date = input("What is today's date? (Enter month date, year): ")
