@@ -1,5 +1,5 @@
 result_1 = not True and False
-print(f"not True and False: {result_1}") # Because not True is False. False and False is False because AND requires both statements to be True") # not True is False. False and False is False because AND requires both statements to be True
+print(f"not True and False: {result_1}") # Because not True is False. False and False is False because AND requires both statements to be True
 
 result_2 = True or False and False
 print(f"True or False and False: {result_2}") # Because AND is evaluated first so False and False is False. OR requires one of the values to be True so it True
