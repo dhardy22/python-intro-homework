@@ -2,24 +2,21 @@
 
 #User input for a number
 
-number = int(input("Please enter a number: "))
+number = int(input("Enter a number: "))
 
 #conditional block #1 tests even or odd
 
 if number < 0 and number != 0 :
-    print(f"{number} is negative")
+    print(f"{number} is negative.")
 elif number > 0 and number != 0 :
-    print(f"{number} is positive")
+    print(f"{number} is positive.")
 
-#conditional block #2 tests number parity
+#conditional block #2 tests number parity and zero case
 
 if number % 2 == 0 and number != 0 :
-    print(f"{number} is even")
+    print(f"{number} is even.")
 elif number % 2 == 1 and number != 0 :
-    print(f"{number} is odd")
-
-# zero case
-
-if number == 0 :
-    print("0 is zero")
-    print("0 is even")
+    print(f"{number} is odd.")
+else :
+    print(f"{number} is zero.")
+    print(f"{number} is even.")
