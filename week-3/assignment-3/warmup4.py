@@ -8,16 +8,16 @@ number = int(input("Enter a number: "))
 
 if number < 0 and number != 0 :
     print(f"{number} is negative.")
-elif number > 0 and number != 0 :
+elif number > 0  :
     print(f"{number} is positive.")
-elif number == 0 :
+else :
     print(f"{number} is zero.")
 
 #conditional block #2 tests number parity and zero case
 
-if number % 2 == 0 and number != 0 :
+if number % 2 == 0  :
     print(f"{number} is even.")
-elif number % 2 == 1 and number != 0 :
+elif number % 2 == 1  :
     print(f"{number} is odd.")
-elif number == 0 :
+else :
     print(f"{number} is even.")
