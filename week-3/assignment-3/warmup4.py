@@ -10,7 +10,7 @@ if number < 0 and number != 0 :
     print(f"{number} is negative.")
 elif number > 0 and number != 0 :
     print(f"{number} is positive.")
-else :
+elif number == 0 :
     print(f"{number} is zero.")
 
 #conditional block #2 tests number parity and zero case
@@ -19,5 +19,5 @@ if number % 2 == 0 and number != 0 :
     print(f"{number} is even.")
 elif number % 2 == 1 and number != 0 :
     print(f"{number} is odd.")
-else :
+elif number == 0 :
     print(f"{number} is even.")
