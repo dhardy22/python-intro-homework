@@ -14,34 +14,32 @@ time_of_day = input("What is the time of day?: ").casefold()
 if day_of_week == "monday" and time_of_day == "morning" :
     print("Enjoy a slow morning - Mondays can get crazy")
 
-if day_of_week == "monday" and time_of_day == "afternoon" :
+elif day_of_week == "monday" and time_of_day == "afternoon" :
     print("Refuel with coffee or tea!")
 
-if day_of_week == "monday" and time_of_day == "evening" :
+elif day_of_week == "monday" and time_of_day == "evening" :
     print("Relax, You survived another Monday!")
 
-
 #Friday suggestions
-if day_of_week == "friday" and time_of_day == "morning" :
+elif day_of_week == "friday" and time_of_day == "morning" :
     print("“Hey Siri, Play Friday (Dopamine Re-Edit)”")
 
-if day_of_week == "friday" and time_of_day == "afternoon" :
+elif day_of_week == "friday" and time_of_day == "afternoon" :
     print("Wrap up and log off!")
 
-if day_of_week == "friday" and time_of_day == "evening" :
+elif day_of_week == "friday" and time_of_day == "evening" :
     print("The couch is calling you. I’m not judging")
 
-
 #Saturday suggestions
-if day_of_week == "saturday" and time_of_day == "morning" :
+elif day_of_week == "saturday" and time_of_day == "morning" :
     print("Get some exercise!")
 
-if day_of_week == "saturday" and time_of_day == "afternoon" :
+elif day_of_week == "saturday" and time_of_day == "afternoon" :
     print("Check out the farmers market")
 
-if day_of_week == "saturday" and time_of_day == "evening" :
+elif day_of_week == "saturday" and time_of_day == "evening" :
     print("Go out on the town")
 else :
-    print("Sorry, I don't recogize that day or time of day. Try entering Monday, Friday, or Saturday; Morning, Afternoon, or Evening")
+    print("Sorry, I didn't recognize that input. Try entering Monday, Friday, or Saturday; Morning, Afternoon, or Evening!")
 
 
