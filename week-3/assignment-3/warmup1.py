@@ -1,3 +1,4 @@
+#Hard coded variable for score setting it equal to what ever number is to the right of the equal sign.
 score = 84 
 
 if score >= 90:
@@ -11,4 +12,4 @@ elif score >= 60:
 else:
     grade = "F"
 
-print(f"Score:{score}\nGrade:{grade}")
+print(f"Score: {score}\nGrade: {grade}")
