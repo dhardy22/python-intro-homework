@@ -24,3 +24,16 @@ print(f"In 10 years you will be {add_tenyears}.")
 
 #3. How you fixed it: 
 # to fix it, I will typecast age to an integer.
+
+#1. What the error message said (paste it): 
+# Traceback (most recent call last):
+#   File "/Users/donovanhardy/CTD/python_class/python-intro-homework/week-2/assignment-2/warmup4.py", line 6, in <module>
+#     add_tenyears = {age + 10}
+#                     ~~~~^~~~
+# TypeError: can only concatenate str (not "int") to str
+
+#2. What caused it: 
+# #  could not be added to 10 using the plus operator + . {age + 10} is not the correct syntax for this age, a string,, an integer for the add_tenyears variable.
+
+#3. How you fixed it: 
+# to fix it, I will typecast age to an integer so that I can use the + plus operator to complete the equation.
