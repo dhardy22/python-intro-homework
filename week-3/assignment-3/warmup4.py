@@ -15,9 +15,8 @@ else :
 
 #conditional block #2 tests number parity and zero case
 
-if number % 2 == 0 and number != 0 :
+if number % 2 == 0 or number == 0 :
     print(f"{number} is even.")
 elif number % 2 == 1  :
     print(f"{number} is odd.")
-else :
-    print(f"{number} is even.")
+
