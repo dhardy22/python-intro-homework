@@ -11,7 +11,7 @@ if number < 0 :
 elif number > 0  :
     print(f"{number} is positive.")
 else:              #If the number is neither greater than nor less than zero, the only number left is zero.
-    print(f"{number} is neither positive nor negative.")
+    print(f"{number} is zero.")
 
 #conditional block #2 tests number parity and zero case
 
