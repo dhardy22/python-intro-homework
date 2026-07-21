@@ -10,8 +10,9 @@ if number < 0 :
     print(f"{number} is negative.")
 elif number > 0  :
     print(f"{number} is positive.")
-else :
-    print(f"{number} is zero.")
+
+if number == 0 :
+    print(f"{number} is neither positive nor negative.")
 
 #conditional block #2 tests number parity and zero case
 
