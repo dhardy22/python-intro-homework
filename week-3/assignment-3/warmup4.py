@@ -15,9 +15,9 @@ else:              #If the number is neither greater than nor less than zero, th
 
 #conditional block #2 tests number parity and zero case
 
-if number % 2 == 0 or number == 0 :
+if number % 2 == 0 :
     print(f"{number} is even.")
-elif number % 2 == 1  :
+else  :
     print(f"{number} is odd.")
 
 
