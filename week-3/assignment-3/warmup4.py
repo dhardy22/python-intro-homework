@@ -6,7 +6,7 @@ number = int(input("Enter a number: "))
 
 #conditional block #1 tests even or odd and zero case
 
-if number < 0 and number != 0 :
+if number < 0 :
     print(f"{number} is negative.")
 elif number > 0  :
     print(f"{number} is positive.")
