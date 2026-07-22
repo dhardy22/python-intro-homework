@@ -24,33 +24,33 @@ else:
     ...
 #Monday suggestions
     if day_of_week == "monday" and time_of_day == "morning" :
-        print("Enjoy a slow morning - Mondays can get crazy")
+        print("Suggestion: Enjoy a slow morning - Mondays can get crazy")
 
     elif day_of_week == "monday" and time_of_day == "afternoon" :
-        print("Refuel with coffee or tea!")
+        print("Suggestion: Refuel with coffee or tea!")
 
     elif day_of_week == "monday" and time_of_day == "evening" :
-        print("Relax, You survived another Monday!")
+        print("Suggestion: Relax, You survived another Monday!")
 
     #Friday suggestions
     elif day_of_week == "friday" and time_of_day == "morning" :
-        print("“Hey Siri, Play Friday (Dopamine Re-Edit)”")
+        print("Suggestion: “Hey Siri, Play Friday (Dopamine Re-Edit)”")
 
     elif day_of_week == "friday" and time_of_day == "afternoon" :
-        print("Wrap up and log off!")
+        print("Suggestion: Wrap up and log off!")
 
     elif day_of_week == "friday" and time_of_day == "evening" :
-        print("The couch is calling you. I’m not judging")
+        print("Suggestion: The couch is calling you. I’m not judging")
 
     #Saturday suggestions
     elif day_of_week == "saturday" and time_of_day == "morning" :
-        print("Get some exercise!")
+        print("Suggestion: Get some exercise!")
 
     elif day_of_week == "saturday" and time_of_day == "afternoon" :
-        print("Check out the farmers market")
+        print("Suggestion: Check out the farmers market")
 
     elif day_of_week == "saturday" and time_of_day == "evening" :
-        print("Go out on the town")
+        print("Suggestion: Go out on the town")
     else :
         ...
 
