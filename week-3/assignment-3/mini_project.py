@@ -6,8 +6,8 @@
 # Normalize input so capitalization doesn't matter (e.g., "Monday" and "monday" both work)
 
 #User inputs for day and time of day
-day_of_week = input("What day is it?: ").casefold().strip()
-time_of_day = input("What is the time of day?: ").casefold().strip()
+day_of_week = input("Enter a day of the week: ").casefold().strip()
+time_of_day = input("Enter a time of day: ").casefold().strip()
 
 #contains all of the valid days contained in valid days and valid times
 valid_days = ("monday", "friday", "saturday")
@@ -21,7 +21,7 @@ elif day_of_week not in valid_days:
 elif time_of_day not in valid_times:
     print("I don't recognize that time. Try Morning, Afternoon, or Evening.")
 else:
-    ...
+    
 #Monday suggestions
     if day_of_week == "monday" and time_of_day == "morning" :
         print("Suggestion: Enjoy a slow morning! - Mondays can get crazy")
@@ -51,7 +51,6 @@ else:
 
     elif day_of_week == "saturday" and time_of_day == "evening" :
         print("Suggestion: Go out on the town!")
-    else :
-        ...
+   
 
 # print(repr(day_of_week), repr(time_of_day))
