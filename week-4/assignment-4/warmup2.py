@@ -14,7 +14,7 @@ students = {
 
 #prints each key, value pair in the dictionary using .items() to parse each pair    
 for key, value in students.items():
-    print(f"Key:{key} | Value:{value}")
+    print(f"{key} {value}")
 
 #creates a new "graduated" key, puts it inside of the dictionary students and sets it equal to the Boolean False 
 students["graduated"] = False
