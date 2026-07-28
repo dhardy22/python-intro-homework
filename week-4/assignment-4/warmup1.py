@@ -14,5 +14,5 @@ middle = numbers[2:6]
 print(f"Middle: {middle}")
 
 #print the list in reverse order
-reversed = list(reversed(numbers))
-print(f"Reversed: {reversed}")
+backwards = list(reversed(numbers))
+print(f"Reversed: {backwards}")
