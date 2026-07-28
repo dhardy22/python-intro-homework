@@ -2,13 +2,17 @@
 numbers = [1, 2, 3, 4, 5, 6, 7, 8]
 
 #print the first item
-print(numbers[0])
+first = numbers[0]
+print(f"First: {first}")
 
 #print the last item
-print(numbers[-1])
+last = numbers[-1]
+print(f"Last: {last}")
 
 #print the middle 4 numbers
-print(numbers[2:6])
+middle = numbers[2:6]
+print(f"Middle: {middle}")
 
 #print the list in reverse order
-print(list(reversed(numbers)))
+reversed = list(reversed(numbers))
+print(f"Reversed: {reversed}")
