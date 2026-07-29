@@ -22,19 +22,20 @@ for item in students :
     current_score = item["score"]
     #Since we've defined total_score as a variable starting @ 0 . we accumulate the score value over each pass of item in students
     total_score = total_score + item["score"]
-
+    #add the values from item["subjects"] to the empty subjects set
     subjects.add(item["subject"])
 
+    #checks if top scores exists or if current score is greater than None
     if top_score is None or current_score > top_score:
-
+        #if there is a score greater than None, it should be assigned to the place holder variable top_score
         top_score = current_score
-
+        #if top score is updated, so will the name of the top_score assigned above (importance of nesting)
         top_score_name = item["name"]
-
+    #checks for current_score item["score"] values greater than 75
     if current_score > 75 :
+        #appends the values to the high_scorer list initiated before the loop. #nesting this allows the list to update with changing scores.
         high_scorers.append(item["name"])
-
-
+#calculates the average score of students using the total_score nested in the loop divided by the length of the list
 class_avg = (total_score)/(len(students))
 
 print(f"Top scorer: {top_score_name} ({top_score})")
