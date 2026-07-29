@@ -39,7 +39,7 @@ class_avg = (total_score)/(len(students))
 
 print(f"Top scorer: {top_score_name} ({top_score})")
 
-print(f"Clas average: {class_avg}") 
+print(f"Class average: {class_avg}") 
 
 print(f"Subjects offered: {subjects}") 
 
