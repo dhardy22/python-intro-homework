@@ -9,7 +9,7 @@ while True:
     print("5. Quit")
 
     choice = input("Choose an option (1-5): ")
-    print(f"DEBUG: you entered {repr(choice)}")   # temporarily add this line
+    # print(f"DEBUG: you entered {repr(choice)}")   # temporarily add this line
 
     if choice == "1":
         smallest = numbers[0]  #  gives us a starting point for the smallest variable
@@ -40,10 +40,16 @@ while True:
 
     elif choice == "4":
         n = len(numbers)
-        for i in range(n-1):
-            for j in range(n-i-1):
-                if numbers[j] > numbers[j+1]: #if the value of position [1] is greater than position [1+1] swap them
-                    numbers[j], numbers[j+1] = numbers[j+1], numbers[j]
+        indexing_length = n-1 
+        sorted = False
+
+        while not sorted:
+             sorted = True
+             for i in range(0, indexing_length):
+                  if numbers[i] > numbers[i+1]:
+                      sorted = False
+                      numbers[i], numbers[i+1] = numbers[i+1], numbers[i]        
+
         print(numbers)
         pass
     elif choice == "5":
