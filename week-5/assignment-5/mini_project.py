@@ -12,14 +12,14 @@ while True:
     # print(f"DEBUG: you entered {repr(choice)}")   # temporarily add this line
 
     if choice == "1":
-        smallest = numbers[0]  #  gives us a starting point for the smallest variable
+        smallest = numbers[0]  #  reserves the first position for the smallest value
         for number in numbers:  # variable 'number' rotates through the numbers list
             if number < smallest:
                 smallest = number  # replaces the value of smallest if the inequality evaluates to True
         print(f"The minimum is: {smallest}")
         pass
     elif choice == "2":
-        largest = numbers[0]  #start with a guess 
+        largest = numbers[0]  # reserves the first position largest 
         for number in numbers:
             if number > largest:
                 largest = number
@@ -39,14 +39,14 @@ while True:
         pass
 
     elif choice == "4":
-        n = len(numbers)
-        indexing_length = n-1 
+        n = len(numbers) 
+        indexing_length = n-1 # the indexing length is 1 shorter than the len(list). Possible source of off-by-one error
         sorted = False
 
-        while not sorted:
-             sorted = True
-             for i in range(0, indexing_length):
-                  if numbers[i] > numbers[i+1]:
+        while not sorted:  # is toggled by sorted being False. Remember: not False = True
+             sorted = True  # stays True when 'if numbers[i] > numbers[i+1]' -> evaluates to False
+             for i in range(0, indexing_length): # sends i from the first through the last iteration of numbers list
+                  if numbers[i] > numbers[i+1]: # left number bigger than right number, sorted = False, keep going.
                       sorted = False
                       numbers[i], numbers[i+1] = numbers[i+1], numbers[i]        
 
