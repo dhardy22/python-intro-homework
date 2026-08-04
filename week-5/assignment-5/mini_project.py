@@ -26,28 +26,34 @@ while True:
         print(f"The maximum is: {largest}")
         pass
     elif choice == "3":
-        found = False
-        index = 0
-        query = int(input("Enter a number to search for: "))
-        while index < len(numbers):
-            if numbers[index] == query:
-                print(f"Found {query} at index {index}")
-                break
-            index += 1
+        try:
+            query = int(input("Enter a number to search for: "))
+        except ValueError:
+            print("That's not an integer. Try again.")
         else:
-            print(f"{query} not found in numbers")
-        pass
+            found = False
+            index = 0
+
+            while index < len(numbers):
+                if numbers[index] == query:
+                    print(f"Found {query} at index {index}")
+                    found = True
+                    break
+                index += 1
+
+            if not found:
+                print(f"{query} not found in numbers")
 
     elif choice == "4":
         n = len(numbers) 
         indexing_length = n-1 # the indexing length is 1 shorter than the len(list). Possible source of off-by-one error
-        sorted = False
+        sorted_list = False
 
-        while not sorted:  # is toggled by sorted being False. Remember: not False = True
-             sorted = True  # stays True when 'if numbers[i] > numbers[i+1]' -> evaluates to False
+        while not sorted_list:  # is toggled by sorted being False. Remember: not False = True
+             sorted_list = True  # stays True when 'if numbers[i] > numbers[i+1]' -> evaluates to False
              for i in range(0, indexing_length): # sends i from the first through the last iteration of numbers list
                   if numbers[i] > numbers[i+1]: # left number bigger than right number, sorted = False, keep going.
-                      sorted = False
+                      sorted_list = False
                       numbers[i], numbers[i+1] = numbers[i+1], numbers[i]        
 
         print(numbers)
