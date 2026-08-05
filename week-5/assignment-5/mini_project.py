@@ -52,9 +52,11 @@ while True:
         while not sorted_list:  # is toggled by sorted being False. Remember: not False = True
              sorted_list = True  # stays True when 'if numbers[i] > numbers[i+1]' -> evaluates to False
              for i in range(0, indexing_length): # sends i from the first through the last iteration of numbers list
+                  #print(f"DEBUG: OUTER LOOP index:{i} ")
                   if numbers[i] > numbers[i+1]: # left number bigger than right number, sorted = False, keep going.
                       sorted_list = False
-                      numbers[i], numbers[i+1] = numbers[i+1], numbers[i]        
+                      numbers[i], numbers[i+1] = numbers[i+1], numbers[i]
+                      #print(f"DEBUG: INNER LOOP index:{numbers} ")        
 
         print(numbers)
         pass
