@@ -7,13 +7,20 @@ or "Invalid score — must be between 0 and 100.".
 
 
 def is_valid_score(score):
-    if 0 <= score <= 100:
+    if isinstance(score, int) and 0 <= score <= 100:
         return True
     else:
         return False
 
 
-user_score = int(input("Enter a score between 0 and 100: "))
+raw_value = input("Enter a score between 0 and 100: ")
+
+try:
+    user_score = int(raw_value)
+except ValueError:
+    # Keep the raw (non-integer) value so is_valid_score can catch the type
+    # failure itself, instead of the calling code filtering it out first.
+    user_score = raw_value
 
 if is_valid_score(user_score):
     print("Valid score.")
