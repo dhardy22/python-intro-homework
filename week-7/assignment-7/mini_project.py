@@ -35,7 +35,7 @@ import sys
 Build an absolute path to the CSV so the script works no matter
 what directory it's run from (not just from inside this folder)'''
 
-file_path = os.path.join(os.path.dirname(__file__), "..", "data", "expenses.csv")
+file_path = "../data/expenses.csv"
 
 if not os.path.exists(file_path):       # message if the file is missing and exit the program
 
@@ -62,8 +62,10 @@ total = sum(expense["amount"] for expense in food_expenses)     # Add up the amo
 today = datetime.date.today().strftime("%B %d, %Y")
 
 # Format the report to food_report.txt
-with open(os.path.join(os.path.dirname(__file__), "food_report.txt"), "w") as report:
+with open('food_report.txt' , 'w') as report:
     report.write(f"Food Expense Report — generated {today}\n")
     for expense in food_expenses:
         report.write(f"{expense['date']}: ${expense['amount']:.2f}\n")
     report.write(f"Total: ${total:.2f}\n")
+
+
