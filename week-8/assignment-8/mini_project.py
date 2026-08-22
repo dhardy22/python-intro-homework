@@ -40,9 +40,15 @@ try:
 
         for row in reader:
             rows_attempted += 1
+
+            if row.get(None):
+                skipped_rows.append(f"Row {rows_attempted}: extra column detected — skipped")
+                rows_skipped += 1
+                continue
             try:
                 # Attempt to process the row
                 amount = float(row['amount'])  # This may raise ValueError
+                row['amount'] = amount  # Update the row with the converted amount
                 clean_data.append(row)
                 rows_parsed += 1
             except ValueError as ve:
@@ -51,13 +57,6 @@ try:
             except KeyError as ke:
                 skipped_rows.append(f"Row {rows_attempted}: KeyError — missing expected column '{ke.args[0]}'")
                 rows_skipped += 1
-
-    # # Format the report to food_report.txt
-    # with open('food_report.txt' , 'w') as report:
-    #     report.write(f"Food Expense Report — generated {today}\n")
-    # for expense in food_expenses:
-    #     report.write(f"{expense['date']}: ${expense['amount']:.2f}\n")
-    # report.write(f"Total: ${total:.2f}\n")
 
     print("File read successfully.")
 except FileNotFoundError:
@@ -71,4 +70,3 @@ if skipped_rows:
     print("Skipped rows:")
     for skipped in skipped_rows:
         print(f"  {skipped}")   
-        
