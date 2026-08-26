@@ -38,25 +38,27 @@ try:
         skipped_rows = []
         clean_data = []     
 
-        for row in reader:
-            rows_attempted += 1
+        #row-by-row error handling
+        for row in reader: # for each row of our list of dictionaries, do the following
+            rows_attempted += 1 #first thing is to increment the rows_attempted counter by 1
 
-            if row.get(None):
-                skipped_rows.append(f"Row {rows_attempted}: extra column detected — skipped")
-                rows_skipped += 1
-                continue
+            #checks for empty headers (None) first and tracks the count if row.get(None) -> True 
+            if row.get(None): # Return None if there is an empty key.
+                skipped_rows.append(f"Row {rows_attempted}: extra column detected — skipped") #this appends the f string (with our row # from rows_attempted)to the end of the skipped_rows =[] list  
+                rows_skipped += 1 # adds 1 to the rows_skipped count if the row has an empty key
+                continue # continues to the next line regardless if the if block evaluated to True or not
             try:
                 # Attempt to process the row
-                amount = float(row['amount'])  # This may raise ValueError
-                row['amount'] = amount  # Update the row with the converted amount
-                clean_data.append(row)
-                rows_parsed += 1
-            except ValueError as ve:
-                skipped_rows.append(f"Row {rows_attempted}: ValueError — could not convert '{row.get('amount', '')}' to float")
-                rows_skipped += 1
+                amount = float(row['amount'])  # typecasts the values associated with amount to a float. May cause Value error if the value is not a number.
+                row['amount'] = amount  # Assigns the converted values back to the key 'amount' in the row/dictionary
+                clean_data.append(row) # adds our converted dictionaries (row) to a new list called cleaned_data 
+                rows_parsed += 1 #adds 1 to our rows parsed counter if the conversion was successful - try: handles the operation without breaking if the conversion does not work
+            except ValueError as ve: 
+                skipped_rows.append(f"Row {rows_attempted}: ValueError — could not convert '{row.get('amount', '')}' to float") #the line runs if a Value error comes up for any of the rows in reader - it appends the statement number of rows attempted and the value that caused the block to run  
+                rows_skipped += 1 # adds 1 to the rows_skipped counter if ValueError occurs
             except KeyError as ke:
-                skipped_rows.append(f"Row {rows_attempted}: KeyError — missing expected column '{ke.args[0]}'")
-                rows_skipped += 1
+                skipped_rows.append(f"Row {rows_attempted}: KeyError — missing expected column '{ke.args[0]}'") #runs if KeyError occurs - appends the f-string with the key that could not be mapped
+                rows_skipped += 1 # adds 1 to the rows_skipped counter if ValueError occurs
 
     print("File read successfully.")
 except FileNotFoundError:
@@ -70,3 +72,4 @@ if skipped_rows:
     print("Skipped rows:")
     for skipped in skipped_rows:
         print(f"  {skipped}")   
+
