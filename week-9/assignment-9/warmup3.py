@@ -1,32 +1,30 @@
-import os
 import requests
+import os
 from pprint import pprint
 from dotenv import load_dotenv
 
 load_dotenv()
 
-print("key loaded:", bool(os.getenv("MY_API_KEY")))
-
 url = "https://api.restcountries.com/countries/v5"
-
-query_params = {
-    "q": "germ",
+params = {
     "region": "Europe"
 }
 
 r = requests.get(
-    url, 
+    url,
     headers={"Authorization": f'Bearer {os.getenv("MY_API_KEY")}'},
-    params=query_params
+    params=params
 )
 
-data = r.json()
+print(r.request.url)          # the actual URL that was sent
 print(f"Status code: {r.status_code}")
 
-for key, value in data.items():
-    print(f"key: {key}: {type(value)}") 
+data = r.json()
+print(type(data))
 
-inner = data["data"]
-print(inner.keys())
-pprint(inner.get("objects", inner)[:1] if isinstance(inner.get("objects"), list) else inner)
+countries = data["data"]["objects"]
 
+print(len(countries))
+
+for country in countries[:10]:
+    print(country["names"]["common"])
