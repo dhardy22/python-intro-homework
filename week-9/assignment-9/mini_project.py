@@ -58,10 +58,10 @@ def fetch_countries():
 def parse_countries(raw_data):
     """Reshape the raw API response into a simple, flat list of dicts.
 
-    The raw API response nests everything under data -> objects, and uses
-    field names (names.common, capitals[0].name) that don't match what
-    the rest of this program wants to work with. This function extracts
-    just the fields we care about into a flat, predictable shape.
+    The raw API response nests everything under {"data": {"objects": all_objects}}, and uses
+    field names (names.common, capitals[0].name) that doesn't match the structure that 
+    the rest of the program works with. This function pulls
+    just the fields we need into a flat, predictable shape.
 
     Args:
         raw_data: the dict returned by fetch_countries().
@@ -130,7 +130,7 @@ def filter_by_region(countries, region):
         print(f'{c["name"]} — Population: {c["population"]:,}')
 
 
-print(f"Loaded {len(countries)} countries")
+# print(f"Loaded {len(countries)} countries")
 
 # Main menu loop: keeps prompting until the user chooses to quit.
 def show_menu():
