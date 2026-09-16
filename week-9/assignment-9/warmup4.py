@@ -8,5 +8,5 @@ try:
     )
     print("Success!")
 except requests.exceptions.RequestException as e:
-    print("Error: Could not reach the server. Check your connection and try again:")
+    print(f"Error {e}: Could not reach the server. Check your connection and try again:")
     
